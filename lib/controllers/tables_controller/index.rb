@@ -1,5 +1,5 @@
 module BareDBService
-  module TableController
+  module TablesController
     class Index
     end
   end

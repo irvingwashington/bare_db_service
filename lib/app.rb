@@ -28,12 +28,18 @@ module BareDBService
     private
 
     def setup_db
-      ActiveRecord::Base.connection
+      ActiveRecord::Base.establish_connection(environment)
     end
 
     def autoload_classes
 
     end
 
+    def environment
+      @env ||= (ENV['RACK_ENV'] || "development").to_sym
+    end
+
   end
 end
+
+A = BareDBService
