@@ -8,7 +8,6 @@ module BareDBService
       def call(params)
         self.content_type = 'application/json'
         table = Table.find(params[:table_name])
-        p params
         record = Record.find(table, params[:record_id])
         self.status = 200
         self.body = record.to_json
