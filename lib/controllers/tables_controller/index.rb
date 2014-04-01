@@ -12,7 +12,7 @@ module BareDBService
         self.status = 200
         self.body = records.to_json
       rescue Table::TableNotFound
-        self.status = 200
+        self.status = 404
         self.body = {:error => "Table not found"}.to_json
       end
 
